@@ -1,0 +1,28 @@
+{
+  "candidate": [
+    {
+      "candidatename": "madhan",
+      "location": "tiruvallur",
+      "skill": "java",
+      "id": 320
+    },
+    {
+      "candidatename": "sugan",
+      "location": "madurai",
+      "skill": "java",
+      "id": 322
+    },
+    {
+      "candidatename": "angel",
+      "location": "madurai",
+      "skill": "java",
+      "id": 323
+    },
+    {
+      "candidatename": "vimal",
+      "location": "madurai",
+      "skill": "c++",
+      "id": 324
+    }
+  ]
+}

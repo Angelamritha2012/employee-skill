@@ -1,0 +1,62 @@
+<p>add-candidate works!</p>
+<form #f = "ngForm" >
+
+    <label for="candidname">Candidate Name</label>
+    <input type="text" name="candidatename" id="candidatename" [(ngModel)] = "candidate.candidatename" ><br><br>
+
+    <label for="location">Location</label>
+    <input type="text" name="location" id="location" [(ngModel)] = "candidate.location"><br><br>
+
+    <label for="skill">Skill</label>
+    <input type="text" name="skill" id="skill" [(ngModel)] = "candidate.skill"><br><br>
+    <input type="button" (click)="addCandidate(f)" value="Add Candidate">
+</form>
+<!-- <h3 *ngIf= "isAdded"> {{confirmString}}</h3> -->
+
+<!-- <div class="card">
+    <div class="card-body">
+      <form [formGroup]="angForm" novalidate>
+        <div class="form-group">
+          <label class="col-md-4">Candidate Name</label>
+          <input type="text" class="form-control"
+            formControlName="candidatename"
+            #candidatename />
+        </div>
+        <div *ngIf="angForm.controls['candidatename'].invalid && (angForm.controls['candidatename'].dirty || angForm.controls['candidatename'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['candidatename'].errors.required">
+            Candidate Name is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Location </label>
+          <textarea class="form-control" rows = 1 cols = "10"
+          formControlName="location"
+          #location></textarea>
+        </div>
+        <div *ngIf="angForm.controls['location'].invalid && (angForm.controls['location'].dirty || angForm.controls['location'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['location'].errors.required">
+            Location is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">skill</label>
+          <input type="text" class="form-control"
+            formControlName="skill"
+            #skill
+          />
+        </div>
+        <div *ngIf="angForm.controls['skill'].invalid && (angForm.controls['skill'].dirty || angForm.controls['skill'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['skill'].errors.required">
+            skill is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+            <button (click) = "addCandidate(candidatename.value, location.value, skill.value)" type="submit" class="btn btn-primary"
+            [disabled]="angForm.pristine || angForm.invalid" >
+              Add Candidate
+            </button>
+    </div>
+      </form>
+    </div>
+  </div> -->

@@ -1,0 +1,20 @@
+<p>view-candidate works!</p>
+<table border='5'>
+    <tr>
+        <td>Id</td>
+        <td>Candidate Name</td>
+        <td>Location</td>
+        <td>Skill</td>
+    </tr>
+    <tr *ngFor="let candid of candidates">
+            <td>{{candid.id}}</td>
+            <td>{{candid.candidatename}}</td>
+            <td>{{candid.location}}</td>
+            <td>{{candid.skill}}</td>
+             <td><a (click)="deleteCandidate(candid.id)">Delete</a></td>
+            <td><a (click)="selectCandidate(candid.id)">Update</a></td>
+        </tr>
+</table>
+
+
+
