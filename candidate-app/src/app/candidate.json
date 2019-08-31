@@ -1,28 +1,22 @@
 {
   "candidate": [
     {
-      "candidatename": "madhan",
-      "location": "tiruvallur",
-      "skill": "java",
-      "id": 320
-    },
-    {
-      "candidatename": "sugan",
+      "candidatename": "arun",
       "location": "madurai",
-      "skill": "java",
+      "skill": "jsp",
       "id": 322
     },
     {
-      "candidatename": "angel",
-      "location": "madurai",
-      "skill": "java",
-      "id": 323
-    },
-    {
-      "candidatename": "vimal",
-      "location": "madurai",
+      "candidatename": "amu",
+      "location": "bodi",
       "skill": "c++",
       "id": 324
+    },
+    {
+      "candidatename": "preethi",
+      "location": "madurai",
+      "skill": "java",
+      "id": 325
     }
   ]
 }

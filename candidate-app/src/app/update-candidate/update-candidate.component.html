@@ -1,5 +1,5 @@
-<p>add-candidate works!</p>
-<form #f = "ngForm" >
+<p>update-candidate works!</p>
+<!-- <form #f = "ngForm" >
 
     <label for="candidname">Candidate Name</label>
     <input type="text" name="candidatename" id="candidatename" [(ngModel)] = "candidate.candidatename" ><br><br>
@@ -10,7 +10,31 @@
     <label for="skill">Skill</label>
     <input type="text" name="skill" id="skill" [(ngModel)] = "candidate.skill"><br><br>
     <input type="button" (click)="updateCandidate(f)" value="update Candidate">
+</form> -->
+
+<form [formGroup]="angForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="candidatename">Candidate Name:</label>
+    <input type="text" formControlName="candidatename" placeholder="candidatename" name="candidatename" class="form-control" id="candidatename">
+  </div>
+
+  <div class="form-group">
+    <label for="location">location</label>
+    <input formControlName="location" placeholder="location" name="location" class="form-control" id="location">
+  </div>
+
+  <div class="form-group">
+    <label for="skill">Skill</label>
+    <input formControlName="skill" placeholder="skill" name="skill" class="form-control" id="skill">
+  </div>
+
+  <button class="btn btn-success">Update</button>
+
 </form>
+
+
+
+
 <!-- <h3 *ngIf= "isAdded"> {{confirmString}}</h3> -->
 
 <!-- <div class="card">

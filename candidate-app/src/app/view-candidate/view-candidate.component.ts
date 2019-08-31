@@ -18,6 +18,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ViewCandidateComponent implements OnInit {
   candidates: Candidate[];
+  isDeleted: boolean=false;
+  confirmString: string= "candidate deleted";
   selectedCandidate: Candidate = { id: null, candidatename: null, location: null, skill: null };
   constructor(
     private cs: CandidService,
@@ -40,23 +42,29 @@ export class ViewCandidateComponent implements OnInit {
     this.cs
       .deleteCandidate(id)
       .subscribe((candidate: Candidate) => {
+        this.isDeleted = true;
+        this.getCandidate();
         console.log('Candidate deleted, ', candidate);
       });
-    this.getCandidate();
+   /*  this.getCandidate(); */
   }
 
   selectCandidate(id) {
     /* this.selectedCandidate=candidate; */
-    this.cs.editCandidate(id)
-      .subscribe((candidates: Candidate[]) => {
+    
+      localStorage.removeItem("candidateId");
+      localStorage.setItem("candidateId",id.toString());
+      this.router.navigate(['updateCandidate']);
+    };
+    /* this.cs.editCandidate(id).subscribe((candidates: Candidate[]) => {
         this.candidates = candidates;
       this.router.navigate(['updateCandidate']);
 
-      });
+      }); */
     /* this.cs.editCandidate(id).subscribe((candidate: Candidate) => {
       console.log('candidate updated', candidate);
       this.router.navigate(['updateCandidate']);
     }); */
   }
-}
+
 

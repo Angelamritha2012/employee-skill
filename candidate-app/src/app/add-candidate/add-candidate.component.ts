@@ -11,7 +11,8 @@ import { Observable } from 'rxjs';
 })
 export class AddCandidateComponent implements OnInit {
   public candidates = [];
-  confirmString: false;
+  isAdded: boolean=false;
+  confirmString: string= "candidate added";
   angForm: FormGroup;
   constructor(
     private fb: FormBuilder,
@@ -20,7 +21,6 @@ export class AddCandidateComponent implements OnInit {
   ) {
     this.createForm();
   }
-
   candidate: Candidate = {
     id: null,
     candidatename: null,
@@ -36,7 +36,9 @@ export class AddCandidateComponent implements OnInit {
   }
 addCandidate(form) {
   this.cs.addCandidate(form.value).subscribe((candidate: Candidate) => {
+  this.isAdded=true;
     console.log('Candidate created, ', candidate);
+    this.angForm.reset();
   });
 }
 

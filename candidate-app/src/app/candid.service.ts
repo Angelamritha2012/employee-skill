@@ -7,7 +7,9 @@ import { Candidate } from './candidate';
 })
 export class CandidService {
 
-
+  
+  candidateid=localStorage.getItem('candidateId');
+  
   constructor(private http: HttpClient) {}
 
   url = 'http://localhost:5555/candidate';
@@ -21,20 +23,20 @@ export class CandidService {
   addCandidate(candidate: Candidate): Observable<Candidate> {
     return this.http.post<Candidate>(`${this.url}`, candidate);
   }
-
+  
   deleteCandidate(id: number)
   {
     return this.http.delete<Candidate>(`${this.url}` + `/` + id);
   }
 
-  updateCandidate(candidate: Candidate): Observable<Candidate>
+  updateCandidate(candidate: Candidate)
 {
-  return this.http.put<Candidate>(`${this.url}`,candidate);
+  return this.http.put(this.url + '/'+ this.candidateid, candidate);
 }
-editCandidate(id) {
+editCandidate(id):Observable<Candidate> {
   return this
           .http 
-          .get(`${this.url}/${id}`);
+          .get<Candidate>(`${this.url}/${id}`);
   }
 
   /* updateCandidate(candidatename, location, skill, id) {
